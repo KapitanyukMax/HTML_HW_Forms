@@ -1,0 +1,98 @@
+@mixin flex($dir, $just: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin shadow($x, $y, $blur, $spread, $color) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+body {
+    @include flex(column, center, center);
+    height: 100vh;
+    margin: 0;
+    background-image: url(images/background.jpg);
+    background-size: 115%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    form {
+        @include shadow(0, 0, 10px, 5px, rgba(0, 0, 0, 0.5));
+        width: 80%;
+        height: 70%;
+        padding: 40px;
+
+        h1 {
+            margin: 0 0 30px 0;
+        }
+
+        p {
+            margin: 30px 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+
+            .label-container {
+                @include flex(row, flex-start, center);
+            }
+
+            .textarea-label {
+                align-items: flex-start;
+            }
+
+            %form-input {
+                margin: 7px 0;
+                padding: 10px;
+                border: 0;
+            }
+
+            .input-group {
+                @include flex(row, space-between);
+                gap: 20px;
+
+                input[type="text"],
+                select {
+                    @extend %form-input;
+                    flex-grow: 1;
+                }
+
+                input[type="number"][placeholder="000"] {
+                    @extend %form-input;
+                    flex-grow: 2;
+                }
+
+                input[type="number"][placeholder="0000"] {
+                    @extend %form-input;
+                    flex-grow: 5;
+                }
+
+                textarea {
+                    @extend %form-input;
+                    flex-grow: 1;
+                    resize: none;
+                    height: 70px;
+                }
+            }
+
+            hr {
+                grid-column: span 2;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            button[type="submit"] {
+                @extend %form-input;
+                grid-column: 2;
+                border: 3px solid white;
+                background-color: transparent;
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

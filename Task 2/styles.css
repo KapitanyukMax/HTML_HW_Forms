@@ -1,0 +1,80 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(images/background.jpg);
+  background-size: 115%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+body form {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  height: 70%;
+  padding: 40px;
+}
+body form h1 {
+  margin: 0 0 30px 0;
+}
+body form p {
+  margin: 30px 0;
+}
+body form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+body form .form-grid .label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+body form .form-grid .textarea-label {
+  align-items: flex-start;
+}
+body form .form-grid button[type=submit], body form .form-grid .input-group textarea, body form .form-grid .input-group input[type=number][placeholder="0000"], body form .form-grid .input-group input[type=number][placeholder="000"], body form .form-grid .input-group input[type=text],
+body form .form-grid .input-group select {
+  margin: 7px 0;
+  padding: 10px;
+  border: 0;
+}
+body form .form-grid .input-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+body form .form-grid .input-group input[type=text],
+body form .form-grid .input-group select {
+  flex-grow: 1;
+}
+body form .form-grid .input-group input[type=number][placeholder="000"] {
+  flex-grow: 2;
+}
+body form .form-grid .input-group input[type=number][placeholder="0000"] {
+  flex-grow: 5;
+}
+body form .form-grid .input-group textarea {
+  flex-grow: 1;
+  resize: none;
+  height: 70px;
+}
+body form .form-grid hr {
+  grid-column: span 2;
+  width: 100%;
+  margin: 10px 0;
+}
+body form .form-grid button[type=submit] {
+  grid-column: 2;
+  border: 3px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=styles.css.map */
