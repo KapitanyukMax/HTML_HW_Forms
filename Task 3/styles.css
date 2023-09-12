@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e4372;
+  color: white;
+}
+body header h1 {
+  margin: 30px 7%;
+  font-size: 16pt;
+  font-weight: normal;
+}
+body header p {
+  margin-right: 7%;
+}
+body header p a {
+  color: white;
+  text-decoration: none;
+}
+body main {
+  padding: 20px 7%;
+}
+body main .flex-container .filters .range-container .currency-input-container #max-price, body main .flex-container .filters .range-container .currency-input-container #min-price, body main form .grid-container select, body main form .grid-container .input-container {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+body main .flex-container .table-container table tbody tr td .center-container button, body main form .grid-container button {
+  border: none;
+  border-radius: 5px;
+  background-color: #0e4372;
+  color: white;
+}
+body main form {
+  overflow: auto;
+}
+body main form .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 10px 0;
+}
+body main form .grid-container .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 1fr;
+  padding: 7px 5px 7px 15px;
+  background-color: white;
+}
+body main form .grid-container .input-container input {
+  border: none;
+  outline: none;
+  color: gray;
+}
+body main form .grid-container .input-container img {
+  width: 25px;
+}
+body main form .grid-container select {
+  flex-basis: 1fr;
+  padding: 7px 20px;
+  outline: none;
+  color: gray;
+}
+body main .flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  gap: 20px;
+}
+body main .flex-container .filters {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+body main .flex-container .filters h3 {
+  margin: 10px 0;
+}
+body main .flex-container .filters h4 {
+  margin: 30px 0 10px;
+  color: #0e4372;
+  font-size: 11pt;
+}
+body main .flex-container .filters .range-container {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: repeat(auto, 3);
+}
+body main .flex-container .filters .range-container label[for=max-price] {
+  grid-column: 3;
+}
+body main .flex-container .filters .range-container .currency-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+body main .flex-container .filters .range-container .currency-input-container #max-price, body main .flex-container .filters .range-container .currency-input-container #min-price {
+  padding: 7px 10px;
+}
+body main .flex-container .filters .range-container .currency-input-container #min-price {
+  width: 40px;
+}
+body main .flex-container .filters .range-container .currency-input-container #max-price {
+  width: 70px;
+}
+body main .flex-container .filters .range-container .hyphen-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 10px;
+}
+body main .flex-container .table-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+  border-radius: 5px;
+  overflow: auto;
+}
+body main .flex-container .table-container h3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 40px;
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+  text-align: center;
+}
+body main .flex-container .table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+body main .flex-container .table-container table tbody tr, body main .flex-container .table-container table thead tr {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+body main .flex-container .table-container table thead tr th {
+  padding: 10px;
+  color: #0e4372;
+  font-size: 14px;
+}
+body main .flex-container .table-container table tbody tr {
+  background-color: white;
+}
+body main .flex-container .table-container table tbody tr td .center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body main .flex-container .table-container table tbody tr td .center-container p.main {
+  margin: 10px 0 5px;
+}
+body main .flex-container .table-container table tbody tr td .center-container p.secondary {
+  margin: 0 0 10px;
+  color: gray;
+  font-size: 10pt;
+}
+body main .flex-container .table-container table tbody tr td .center-container button {
+  margin: 7px;
+  padding: 7px 20px;
+}
+body main .flex-container .table-container table tbody tr td .center-container a {
+  margin-bottom: 10px;
+  color: #0e4372;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,233 @@
+$colorDarkBlue: #0e4372;
+
+@mixin flex($dir, $just: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin grid($rows: auto, $cols: auto) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: $cols;
+}
+
+@mixin shadow() {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+
+    header {
+        @include flex(row, space-between, center);
+        background-color: $colorDarkBlue;
+        color: white;
+
+        h1 {
+            margin: 30px 7%;
+            font-size: 16pt;
+            font-weight: normal;
+        }
+
+        p {
+            margin-right: 7%;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    main {
+        padding: 20px 7%;
+
+        %input {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        %button {
+            border: none;
+            border-radius: 5px;
+            background-color: $colorDarkBlue;
+            color: white;
+        }
+
+        form {
+            overflow: auto;
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 20px;
+                margin: 10px 0;
+
+                .input-container {
+                    @extend %input;
+                    @include flex(row, space-between, center);
+                    flex-basis: 1fr;
+                    padding: 7px 5px 7px 15px;
+                    background-color: white;
+
+                    input {
+                        border: none;
+                        outline: none;
+                        color: gray;
+                    }
+
+                    img {
+                        width: 25px;
+                    }
+                }
+
+                select {
+                    @extend %input;
+                    flex-basis: 1fr;
+                    padding: 7px 20px;
+                    outline: none;
+                    color: gray;
+                }
+
+                button {
+                    @extend %button;
+                }
+            }
+        }
+
+        .flex-container {
+            @include flex(row, space-between, flex-start);
+            margin-top: 30px;
+            gap: 20px;
+
+            .filters {
+                @include shadow;
+                padding: 30px;
+                border-radius: 5px;
+                background-color: white;
+
+                h3 {
+                    margin: 10px 0;
+                }
+
+                h4 {
+                    margin: 30px 0 10px;
+                    color: $colorDarkBlue;
+                    font-size: 11pt;
+                }
+
+                .range-container {
+                    @include grid(1fr 2fr, repeat(auto, 3));
+
+                    label[for="max-price"] {
+                        grid-column: 3;
+                    }
+
+                    .currency-input-container {
+                        @include flex(row, space-between, center);
+                        gap: 5px;
+
+                        %price-input {
+                            @extend %input;
+                            padding: 7px 10px;
+                        }
+
+                        #min-price {
+                            @extend %price-input;
+                            width: 40px;
+                        }
+
+                        #max-price {
+                            @extend %price-input;
+                            width: 70px;
+                        }
+                    }
+
+                    .hyphen-container {
+                        @include flex(row, flex-start, center);
+                        margin: 0 10px;
+                    }
+                }
+            }
+
+            .table-container {
+                @include shadow;
+                flex-grow: 1;
+                border-radius: 5px;
+                overflow: auto;
+
+                h3 {
+                    @include flex(row, center, center);
+                    margin: 0;
+                    padding: 40px;
+                    border-radius: 5px 5px 0 0;
+                    background-color: white;
+                    text-align: center;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    %tr {
+                        border-top: 1px solid lightgray;
+                        border-bottom: 1px solid lightgray;
+                    }
+
+                    thead {
+                        tr {
+                            @extend %tr;
+
+                            th {
+                                padding: 10px;
+                                color: $colorDarkBlue;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            @extend %tr;
+                            background-color: white;
+
+                            td {
+                                .center-container {
+                                    @include flex(column, center, center);
+                                    text-align: center;
+
+                                    p.main {
+                                        margin: 10px 0 5px;
+                                    }
+
+                                    p.secondary {
+                                        margin: 0 0 10px;
+                                        color: gray;
+                                        font-size: 10pt;
+                                    }
+
+                                    button {
+                                        margin: 7px;
+                                        padding: 7px 20px;
+                                        @extend %button;
+                                    }
+
+                                    a {
+                                        margin-bottom: 10px;
+                                        color: $colorDarkBlue;
+                                        font-size: 10pt;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
